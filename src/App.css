@@ -1,38 +1,964 @@
-.App {
-  text-align: center;
+html { 
+  /*SCROLL SNAP*/
+  /*Redundancy due to ensuring that scroll snap works on all browsers */
+  /* scroll-snap-type: mandatory;
+  scroll-snap-points-y: repeat(100vh);
+  scroll-snap-type: y mandatory;
+  scroll-margin: 50px 0 0 50px; */
+
+  scroll-behavior: smooth;
+
+  /*GENERAL STYLING*/
+  font-family: sans-serif;
+  cursor: url("https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/White_dot.svg/16px-White_dot.svg.png"), auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+section {
+  height: 100vh;
+
+  /* Scroll snap setup for section */
+  /* scroll-snap-align: start; */
+}
+
+.flexTextCenter {
   display: flex;
-  flex-direction: column;
+  justify-content: center; /* Align horizontal */
+  align-items: center; /* Align vertical */
+}
+
+/* NAVBAR DOTS */
+.dot {
+  height: 3rem;
+  width: 5px;
+  background-color: #fff;
+  /* border-radius: 50%; */
+  display: inline-block;
+  opacity: 0.5;
+  transition: all 0.4s;
+  border: #fff;
+  border: 1em;
+}
+
+.dot.active {
+  height:3rem;
+  width: 10px;
+  opacity: 1;
+}
+
+/* GENERAL VERTICAL CENTER */
+.vertical-center {
+  margin: 0;
+  position: fixed;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/* LOADING SCREEN */
+.loadingScreen {
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* TRACKING EYEBALLS */
+.eyes{
+  position:absolute;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.eye{
+  width:240px;
+  height: 120px;
+  background: #fff;
+  display: inline-block;
+  border-radius: 50%;
+  position: relative;
+  /* Trick to "masking" */
+  overflow: hidden;
+}
+
+.ball{
+  width : 70px;
+  height : 70px;
+  background: #000;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border: 10px solid #333;
+}
+
+/* LAGGING CURSOR */
+.laggingCursor {
+    pointer-events: none;
+    z-index: 100;
+    position: absolute;
+    border: solid 1px #ccc;
+    width: 60px; 
+    height: 60px; 
+    border-radius: 50%;  
+
+  transform: translate(10%,10%);
+}
+
+/* SIGNATURE */
+.autographPath {
+  opacity: 1;
+}
+
+.autographPath.animated {
+  animation : line 1s ease-out forwards;
+}
+
+@keyframes line {
+  100% {
+    stroke-dashoffset: 0;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+/* FOOTER */
+.footer {
+  font-size: medium;
+  height: 20rem;
+  background-color: rgba(30, 30 ,30 , 0.5);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+/* Home Navigation */
+.homenav {
+  opacity: 50%;
+  transition: 0.3s;
+  border-style: none none none solid;
+  border-width:0px;
+  padding: 5px;
+}
+
+.homenav:hover {
+  opacity: 100%;
+  border-width:0.5rem;
+}
+
+.homenavBottom {
+  opacity: 50%;
+  transition: 0.3s;
+  border-style: none none none solid;
+  border-width:0px;
+  padding: 5px;
+}
+
+.homenavBottom:hover {
+  opacity: 100%;
+  border-width:0.5rem;
+}
+
+/* Sticky Slides */
+.stacking-slide {
+  width: 100%;
+  /* position: sticky; UNCOMMENT FOR STACKING SLIDES EFFECT*/ 
+  top: 0;
+}
+
+/* Gallery */
+.gallery {
+	display: flex;
+	padding: 2px;
+	transition: .3s;
+}
+
+.gallery:hover .gallery__image{
+    filter: grayscale(1);
+}
+
+.gallery__image:hover {
+		filter: grayscale(0);
+}
+
+.gallery__column {
+		display: flex;
+		flex-direction: column;
+		width: 25%;
+	}
+	
+.gallery__link {
+		margin: 2px;
+		overflow: hidden;
+	}
+
+  .gallery__link:hover .gallery__image {
+    filter: grayscale(0);
+  }
+
+  .gallery__link:hover .gallery__caption {
+    opacity: 1;
+  }
+	
+	.gallery__thumb {
+		position: relative;
+	}
+	
+	.gallery__image {
+		display: block;
+		width: 100%;
+		transition: .3s;
+	
+	}
+  .gallery__image:hover {
+    transform: scale(1.1);
+  }
+	
+	.gallery__caption {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		padding: 25px 15px 15px;
+		width: 100%;
+		font-family: 'Raleway', sans-serif;
+		font-size: 16px;
+		color: white;
+		opacity: 0;
+		background: linear-gradient(0deg, rgba(0, 0, 0, .5) 0%, rgba(255, 255 ,255 , 0) 100%);
+		transition: .3s;
+	}
+
+  /* WORD CAROUSEL */
+  @import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:300|Oswald);
+ .wordCarousel {
+	 font-size: 36px;
+	 font-weight: 100;
+	 color: #eee;
+}
+ .wordCarousel div {
+	 overflow: hidden;
+	 position: relative;
+	 float: right;
+	 height: 65px;
+	 padding-top: 10px;
+	 margin-top: -10px;
+}
+ .wordCarousel div li {
+	 color: #eee;
+	 font-weight: 700;
+	 padding: 0 10px;
+	 height: 45px;
+	 margin-bottom: 45px;
+	 display: block;
+}
+ .flip2 {
+	 animation: flip2 6s cubic-bezier(0.23, 1, 0.32, 1.2) infinite;
+}
+ .flip3 {
+	 animation: flip3 8s cubic-bezier(0.23, 1, 0.32, 1.2) infinite;
+}
+ .flip4 {
+	 animation: flip4 10s cubic-bezier(0.23, 1, 0.32, 1.2) infinite;
+}
+ @keyframes flip2 {
+	 0% {
+		 margin-top: -180px;
+	}
+	 5% {
+		 margin-top: -90px;
+	}
+	 50% {
+		 margin-top: -90px;
+	}
+	 55% {
+		 margin-top: 0px;
+	}
+	 99.99% {
+		 margin-top: 0px;
+	}
+	 100% {
+		 margin-top: -270px;
+	}
+}
+ @keyframes flip3 {
+	 0% {
+		 margin-top: -270px;
+	}
+	 5% {
+		 margin-top: -180px;
+	}
+	 33% {
+		 margin-top: -180px;
+	}
+	 38% {
+		 margin-top: -90px;
+	}
+	 66% {
+		 margin-top: -90px;
+	}
+	 71% {
+		 margin-top: 0px;
+	}
+	 99.99% {
+		 margin-top: 0px;
+	}
+	 100% {
+		 margin-top: -270px;
+	}
+}
+ @keyframes flip4 {
+	 0% {
+		 margin-top: -360px;
+	}
+	 5% {
+		 margin-top: -270px;
+	}
+	 25% {
+		 margin-top: -270px;
+	}
+	 30% {
+		 margin-top: -180px;
+	}
+	 50% {
+		 margin-top: -180px;
+	}
+	 55% {
+		 margin-top: -90px;
+	}
+	 75% {
+		 margin-top: -90px;
+	}
+	 80% {
+		 margin-top: 0px;
+	}
+	 99.99% {
+		 margin-top: 0px;
+	}
+	 100% {
+		 margin-top: -270px;
+	}
+}
+
+/* MORE ARROW */
+.center-con {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.round {
+    position: absolute;
+    border: 2px solid #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    
+}
+
+#cta{
+    width:100%; cursor: pointer; position: absolute;
+}
+
+#cta .arrow{left: 50%; transform: translateX(-50%);}
+.arrow {position: absolute; bottom: 0;  margin-left:0px; width: 20px; height: 20px; background-size: contain; top:5px;}
+.segunda{margin-top: 10px;}
+.next {
+	background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8' standalone='no'%3F%3E%3C!-- Created with Inkscape (http://www.inkscape.org/) --%3E%3Csvg xmlns:dc='http://purl.org/dc/elements/1.1/' xmlns:cc='http://creativecommons.org/ns%23' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns%23' xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' xmlns:sodipodi='http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd' xmlns:inkscape='http://www.inkscape.org/namespaces/inkscape' width='512' height='512' id='svg2' version='1.1' inkscape:version='0.48.4 r9939' sodipodi:docname='arrow_right.svg' inkscape:export-filename='C:%5CDocuments and Settings%5Cbstawarz%5CBureau%5CProjects%5CProjet Site%5Cv1.0%5Carrow.png' inkscape:export-xdpi='90' inkscape:export-ydpi='90'%3E%3Cdefs id='defs4' /%3E%3Csodipodi:namedview id='base' pagecolor='%23ffffff' bordercolor='%23666666' borderopacity='1.0' inkscape:pageopacity='0.0' inkscape:pageshadow='2' inkscape:zoom='0.49497475' inkscape:cx='271.28377' inkscape:cy='123.11958' inkscape:document-units='px' inkscape:current-layer='layer1' showgrid='false' inkscape:window-width='986' inkscape:window-height='626' inkscape:window-x='291' inkscape:window-y='239' inkscape:window-maximized='0' /%3E%3Cmetadata id='metadata7'%3E%3Crdf:RDF%3E%3Ccc:Work rdf:about=''%3E%3Cdc:format%3Eimage/svg+xml%3C/dc:format%3E%3Cdc:type rdf:resource='http://purl.org/dc/dcmitype/StillImage' /%3E%3Cdc:title%3E%3C/dc:title%3E%3C/cc:Work%3E%3C/rdf:RDF%3E%3C/metadata%3E%3Cg inkscape:label='Calque 1' inkscape:groupmode='layer' id='layer1' transform='translate(0,-540.3622)'%3E%3Cpath style='fill:%23ffffff;fill-opacity:1;stroke:%23ffffff;stroke-width:38.88000107;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none' d='M 72.71772,732.21344 255.99937,915.49506 439.28228,732.21344 384.29689,677.22934 255.99937,805.52686 127.70315,677.22934 z' id='path3766-1' inkscape:connector-curvature='0' sodipodi:nodetypes='ccccccc' /%3E%3C/g%3E%3C/svg%3E%0A");
+}
+
+@keyframes bounceAlpha {
+  0% {opacity: 1; transform: translate(-50%,0px) scale(1);}
+  25%{opacity: 0; transform:translate(-50%,10px) scale(0.9);}
+  26%{opacity: 0; transform:translate(-50%,-10px) scale(0.9);}
+  55% {opacity: 1; transform: translate(-50%,0px) scale(1);}
+}
+
+.bounceAlpha {
+    animation-name: bounceAlpha;
+    animation-duration:1.4s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+.arrow.primera.bounceAlpha {
+    animation-name: bounceAlpha;
+    animation-duration:1.4s;
+    animation-delay:0.2s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+.round .arrow{
+    animation-name: bounceAlpha;
+    animation-duration:1.4s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+.round .arrow.primera{
+    animation-name: bounceAlpha;
+    animation-duration:1.4s;
+    animation-delay:0.2s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+/* ANIMATED TITLE */
+@import url('https://fonts.googleapis.com/css?family=Roboto:700');
+@keyframes showTopText {
+  0% {
+    transform: translate3d(0, 100%, 0);
+  }
+  40%, 60% {
+    transform: translate3d(0, 50%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes showBottomText {
+  0% {
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+.animated-title {
+  color: #fff;
+  font-family: Roboto, Arial, sans-serif;
+  
+  left: 0%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-100%, -50%);
+ 
+  height: 90vmin;
+  width: 90vmin;
+}
+.animated-title > div {
+  height: 50%;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+}
+.animated-title > div div {
+  /* font-size: 12vmin; */
+  padding: 2vmin 0;
+  position: absolute;
+}
+.animated-title > div div span {
+  display: block;
+}
+.animated-title > div.text-top {
+  top: 0;
+}
+.animated-title > div.text-top div {
+  animation: showTopText 1s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  bottom: 0;
+  transform: translate(0, 100%);
+}
+.animated-title > div.text-top div span:first-child {
+  color: #767676;
+}
+.animated-title > div.text-bottom {
+  bottom: 0;
+}
+.animated-title > div.text-bottom div {
+  animation: showBottomText 0.5s;
+  animation-delay: 1.75s;
+  animation-fill-mode: forwards;
+  top: 0;
+  transform: translate(0, -100%);
+}
+
+/* FLIPPING WORDS */
+.word {
+	/* perspective: 1000px;  */
+}
+
+.word span {
+	/* cursor: pointer; */
+	/* display: inline-block; */
+	/* font-size: 100px; */
+	user-select: none;
+	/* line-height: .8; */
+}
+
+.word span.active {
+	animation: toplong 0.9s ease-in-out;
+	transform-origin: bottom left;
+}
+
+@keyframes balance {
+	0%, 100% {
+		transform: rotate(0deg);
+	}
+	
+	30%, 60% {
+		transform: rotate(-45deg);
+	}
+}
+
+
+@keyframes shrinkjump {
+	10%, 35% {
+		transform: scale(2, .2) translate(0, 0);
+	}
+	
+	45%, 50% {
+		transform: scale(1) translate(0, -150px);
+	}
+	
+	80% {
+		transform: scale(1) translate(0, 0);
+	}
+}
+
+
+@keyframes falling {
+	12% {
+		transform: rotateX(240deg);
+	}
+	
+	24% {
+		transform: rotateX(150deg);
+	}
+	
+	36% {
+		transform: rotateX(200deg);
+	}
+	
+	48% {
+		transform: rotateX(175deg);
+	}
+	
+	60%, 85% {
+		transform: rotateX(180deg);
+	}
+	
+	100% {
+		transform: rotateX(0deg);
+	}
+}
+
+
+@keyframes rotate {
+	20%, 80% {
+		transform:  scale(80%) translate(40%,-40%) rotateX(60deg);
+	}
+	
+	100% {
+		transform:  scale(100%) translate(0%,0%) rotateX(0deg);
+
+	}
+}
+
+
+@keyframes toplong {
+	0%   { transform: scale(1,1)      translateY(0); }
+        10%  { transform: scale(1.1,.9)   translateY(0); }
+        30%  { transform: scale(.9,1.1)   translateY(-100px); }
+        50%  { transform: scale(1.05,.95) translateY(0); }
+        57%  { transform: scale(1,1)      translateY(-7px); }
+        64%  { transform: scale(1,1)      translateY(0); }
+        100% { transform: scale(1,1)      translateY(0); }
+}
+
+
+/* GLITCH */
+/* Our mixin positions a copy of our text directly on our existing text, while also setting content to the appropriate text set in the data-text attribute. */
+.glitch {
+  position: relative;
+  color: white;
+  /* font-size: 4em; */
+ /* Animation provies a slight random skew. Check bottom of doc for more information on how to random skew. */
+  animation: glitch-skew 1s infinite linear alternate-reverse;
+}
+.glitch::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  left: 2px;
+  text-shadow: -2px 0 #ff00c1;
+ /* Creates an initial clip for our glitch. This works in a typical top,right,bottom,left fashion and creates a mask to only show a certain part of the glitch at a time. */
+  clip: rect(44px, 450px, 56px, 0);
+ /* Runs our glitch-anim defined below to run in a 5s loop, infinitely, with an alternating animation to keep things fresh. */
+  animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  left: -2px;
+  text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+  animation: glitch-anim2 1s infinite linear alternate-reverse;
+}
+/* Creates an animation with 20 steaps. For each step, it calculates a percentage for the specific step. It then generates a random clip box to be used for the random glitch effect. Also adds a very subtle skew to change the 'thickness' of the glitch.*/
+@keyframes glitch-anim {
+  0% {
+    clip: rect(20px, 9999px, 37px, 0);
+    transform: skew(0.69deg);
+ }
+  5% {
+    clip: rect(31px, 9999px, 18px, 0);
+    transform: skew(0.27deg);
+ }
+  10% {
+    clip: rect(44px, 9999px, 66px, 0);
+    transform: skew(0.81deg);
+ }
+  15% {
+    clip: rect(69px, 9999px, 2px, 0);
+    transform: skew(0.22deg);
+ }
+  20% {
+    clip: rect(30px, 9999px, 24px, 0);
+    transform: skew(0.57deg);
+ }
+  25% {
+    clip: rect(76px, 9999px, 74px, 0);
+    transform: skew(0.42deg);
+ }
+  30% {
+    clip: rect(49px, 9999px, 27px, 0);
+    transform: skew(0.63deg);
+ }
+  35% {
+    clip: rect(87px, 9999px, 9px, 0);
+    transform: skew(0.33deg);
+ }
+  40% {
+    clip: rect(96px, 9999px, 31px, 0);
+    transform: skew(0.42deg);
+ }
+  45% {
+    clip: rect(67px, 9999px, 25px, 0);
+    transform: skew(0.39deg);
+ }
+  50% {
+    clip: rect(84px, 9999px, 12px, 0);
+    transform: skew(0.76deg);
+ }
+  55% {
+    clip: rect(81px, 9999px, 51px, 0);
+    transform: skew(0.39deg);
+ }
+  60% {
+    clip: rect(22px, 9999px, 9px, 0);
+    transform: skew(0.84deg);
+ }
+  65% {
+    clip: rect(49px, 9999px, 29px, 0);
+    transform: skew(0.22deg);
+ }
+  70% {
+    clip: rect(76px, 9999px, 76px, 0);
+    transform: skew(0.23deg);
+ }
+  75% {
+    clip: rect(65px, 9999px, 86px, 0);
+    transform: skew(0.08deg);
+ }
+  80% {
+    clip: rect(94px, 9999px, 70px, 0);
+    transform: skew(0.44deg);
+ }
+  85% {
+    clip: rect(59px, 9999px, 25px, 0);
+    transform: skew(0.08deg);
+ }
+  90% {
+    clip: rect(69px, 9999px, 9px, 0);
+    transform: skew(0.1deg);
+ }
+  95% {
+    clip: rect(63px, 9999px, 62px, 0);
+    transform: skew(0.92deg);
+ }
+  100% {
+    clip: rect(97px, 9999px, 54px, 0);
+    transform: skew(0.38deg);
+ }
+}
+@keyframes glitch-anim2 {
+  0% {
+    clip: rect(34px, 9999px, 18px, 0);
+    transform: skew(0.64deg);
+ }
+  5% {
+    clip: rect(98px, 9999px, 70px, 0);
+    transform: skew(0.77deg);
+ }
+  10% {
+    clip: rect(89px, 9999px, 91px, 0);
+    transform: skew(0.7deg);
+ }
+  15% {
+    clip: rect(45px, 9999px, 100px, 0);
+    transform: skew(0.69deg);
+ }
+  20% {
+    clip: rect(17px, 9999px, 14px, 0);
+    transform: skew(0.74deg);
+ }
+  25% {
+    clip: rect(32px, 9999px, 88px, 0);
+    transform: skew(0.66deg);
+ }
+  30% {
+    clip: rect(54px, 9999px, 71px, 0);
+    transform: skew(0.61deg);
+ }
+  35% {
+    clip: rect(3px, 9999px, 9px, 0);
+    transform: skew(0.07deg);
+ }
+  40% {
+    clip: rect(42px, 9999px, 16px, 0);
+    transform: skew(0.19deg);
+ }
+  45% {
+    clip: rect(32px, 9999px, 95px, 0);
+    transform: skew(0.19deg);
+ }
+  50% {
+    clip: rect(39px, 9999px, 23px, 0);
+    transform: skew(0.94deg);
+ }
+  55% {
+    clip: rect(8px, 9999px, 19px, 0);
+    transform: skew(0.22deg);
+ }
+  60% {
+    clip: rect(41px, 9999px, 4px, 0);
+    transform: skew(0.87deg);
+ }
+  65% {
+    clip: rect(15px, 9999px, 63px, 0);
+    transform: skew(0.3deg);
+ }
+  70% {
+    clip: rect(7px, 9999px, 66px, 0);
+    transform: skew(0.28deg);
+ }
+  75% {
+    clip: rect(14px, 9999px, 83px, 0);
+    transform: skew(0.18deg);
+ }
+  80% {
+    clip: rect(88px, 9999px, 14px, 0);
+    transform: skew(0.34deg);
+ }
+  85% {
+    clip: rect(60px, 9999px, 70px, 0);
+    transform: skew(0.79deg);
+ }
+  90% {
+    clip: rect(79px, 9999px, 7px, 0);
+    transform: skew(0.21deg);
+ }
+  95% {
+    clip: rect(75px, 9999px, 93px, 0);
+    transform: skew(0.73deg);
+ }
+  100% {
+    clip: rect(50px, 9999px, 95px, 0);
+    transform: skew(0.46deg);
+ }
+}
+@keyframes glitch-skew {
+  0% {
+    transform: skew(1deg);
+ }
+  10% {
+    transform: skew(-2deg);
+ }
+  20% {
+    transform: skew(0deg);
+ }
+  30% {
+    transform: skew(-4deg);
+ }
+  40% {
+    transform: skew(1deg);
+ }
+  50% {
+    transform: skew(-4deg);
+ }
+  60% {
+    transform: skew(-1deg);
+ }
+  70% {
+    transform: skew(5deg);
+ }
+  80% {
+    transform: skew(-1deg);
+ }
+  90% {
+    transform: skew(-1deg);
+ }
+  100% {
+    transform: skew(3deg);
+ }
+}
+
+section {
+  transition: transform 0.25s;
+}
+
+.stickyHeader {
+  z-index: 1000;
+  transition: all 0.3s;
+  background:rgba(0, 0, 0, 0);
+  -webkit-backdrop-filter: blur(0px);
+  backdrop-filter: blur(0px);
+}
+
+.stickyHeader.active {
+  background:rgba(20, 20, 20, 0.7);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+/* SOCIAL ICONS */
+
+.noselect {
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+		-webkit-tap-highlight-color: transparent;
+}
+
+.socialButton {
+	width: 150px;
+	height: 50px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	background: red;
+	border: none;
+	border-radius: 5px;
+	box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+	background: #e62222;
+}
+
+.socialButton, .socialButton span {
+	transition: 200ms;
+}
+
+.socialButton .text {
+	transform: translateX(35px);
+	color: white;
+	font-weight: bold;
+}
+
+.socialButton .icon {
+	position: absolute;
+	border-left: 1px solid #c41b1b;
+	transform: translateX(110px);
+	height: 40px;
+	width: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.socialButton svg {
+	width: 15px;
+	fill: #eee;
+}
+
+.socialButton:hover {
+	background: #ff3636;
+}
+
+.socialButton:hover .text {
+	color: transparent;
+}
+
+.socialButton:hover .icon {
+	width: 150px;
+	border-left: none;
+	transform: translateX(0);
+}
+
+.socialButton:focus {
+	outline: none;
+}
+
+/* WAVE */
+.waves {
+  position:relative;
+  width: 100%;
+  height:15vh;
+  margin-bottom:-7px; /*Fix for safari gap*/
+  min-height:100px;
+  max-height:150px;
+}
+
+
+/* Animation */
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+@keyframes move-forever {
+  0% {
+   transform: translate3d(-90px,0,0);
+  }
+  100% { 
+    transform: translate3d(85px,0,0);
+  }
+}
+
+.transition1 {
+  transition: 0.4s;
+  animation-name: trans;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes trans {
+  0% {
+    clip-path: polygon(100% 5%, 100% 86%, 27% 100%, 0 73%, 0 39%, 28% 90%);
+  }
+  50% {
+    clip-path: polygon(100% 5%, 100% 68%, 56% 85%, 0 73%, 0 39%, 55% 72%);
+  }
+  100% {
+    clip-path: polygon(100% 5%, 100% 86%, 27% 100%, 0 73%, 0 39%, 28% 90%);
   }
 }
