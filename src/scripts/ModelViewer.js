@@ -3,8 +3,8 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import kazumi from './WRLogo.png'
-import WRWRBG from 'C:/Users/gerad/Desktop/PROJECTS/WOODRAWR.COM/src/img/WRWRBG.png'
-import gltfPath from 'C:/Users/gerad/Desktop/PROJECTS/WOODRAWR.COM/src/model/robotbossthreejs.glb'
+import WRWRBG from 'C:/Users/gerad/Desktop/pw/alvandi/src/img/WRWRBG.png'
+import gltfPath from 'C:/Users/gerad/Desktop/pw/alvandi/src/model/robotbossthreejs.glb'
 
 export default class ModelViewer extends React.Component {
 

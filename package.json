@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "http://woodrawr.github.io/alvandi",
   "dependencies": {
-    "@craco/craco": "^6.2.0",
+    "@craco/craco": "^6.4.5",
     "@google/model-viewer": "^1.8.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
