@@ -438,7 +438,7 @@ function App() {
                 </div>
 
               </section>
-{/* 
+
               <div className="h-32 w-screen relative bg-gray-700">
                 <div id="transition" className="absolute transition1 h-full w-full" style={{
                   animationDelay: `-${offsetY * 0.003
@@ -447,7 +447,7 @@ function App() {
                 }}>
                   <img src={kazumi} style={{ transform: `translateY(${((offsetY - 2 * screenHeight) * 0.2)}px)` }} className="w-full" />
                 </div>
-              </div> */}
+              </div>
 
 
               <section id="duck" className=" z-30 stacking-slide h-screen text-white font-bold text-5xl flexTextCenter pt-20 bg-gray-700">
