@@ -206,21 +206,17 @@ function App() {
                   backgroundSize: '10%'
                 }}
               >
-
                 <div id="stickyHeader" className="stickyHeader fixed w-full z-50 text-white text-sm flex flex-row p-4 h-20">
                   <div id="Logo" className="absolute right-1/2 transform translate-x-1/2 h-1/2">
                     <img src={WRLOGO} className="h-full" />
                   </div>
-
                   {/* <div className="h-full relative transform top-0 translate-y-1/2"> */}
                   <div className="absolute top-1/2 transform -translate-y-1/2">
                     "WOODRAWR.COM"
                   </div>
-
                   <div className="w-full">
                     {/* SPACER */}
                   </div>
-
                   <div className="flex flex-row">
                     <a class="homenavBottom text-lg" href="#home"> HOME </a>
                     <a class="homenavBottom text-lg" href="#about"> ABOUT </a>
@@ -230,10 +226,7 @@ function App() {
                     <a class="homenavBottom text-lg" href="#end"> END </a>
                     <a class="homenavBottom text-lg" href="#footer"> FOOTER </a>
                   </div>
-
                 </div>
-
-
 
                 <div id="HomeNavigation" className=" px-10 absolute h-full text-base font-thin top-1/2 text-white font-mono">
                   <div className="transform -translate-y-1/2 ">
@@ -269,7 +262,6 @@ function App() {
                     <div class="center-con" className="center-con transform translate-y-5">
                       <div class="round">
                         <div id="cta">
-
                           <span class="arrow primera next "></span>
                           <span class="arrow segunda next "></span>
                         </div>
@@ -278,11 +270,10 @@ function App() {
                   </a>
                 </div>
 
-                <div id="FrontText" className="absolute right-0 text-7xl top-2/4 transform -translate-y-1/2 -translate-x-1/3" style={{
+                <div id="FrontText" className="absolute right-0 text-7xl top-1/2 transform -translate-y-1/2 -translate-x-1/3" style={{
                   "-webkit-text-stroke": "0px white",
                   "-webkit-text-fill-color": "white"
                 }}>
-
                   <div className="animated-title">
                     <div className="text-top">
                       <div>
@@ -315,7 +306,6 @@ function App() {
                     <div className="text-bottom">
                       <div>
                         <div>
-
                           <div class="wordCarousel">
                             <div className="flex flex-row">
                               <ul class="flip4 font-mono font-thin">
@@ -325,7 +315,6 @@ function App() {
                                 <li>COOL STUFF</li>
                               </ul>
                               <div className=" bottom-0 transform -translate-y-1/2">
-
                               </div>
                             </div>
                           </div>
@@ -340,8 +329,6 @@ function App() {
                 <div id="ModelViewer" className="h-full">
                   <ModelViewer />
                 </div>
-
-
 
               </section>
 
@@ -360,9 +347,7 @@ function App() {
                     me.About();
                   </Zoom>
                 </div>
-
                 <img src={kazumi} className=" z-50 h-2/3 bottom-0 absolute left-1/2 transform -translate-x-1/2 myPic"></img>
-
               </section>
 
               <div id="slidingtext_projects" className="absolute z-50 -translate-y-1/2 transform text-3xl overflow-x-scroll max-h-32 whitespace-nowrap" style={{
@@ -453,7 +438,7 @@ function App() {
                 </div>
 
               </section>
-
+{/* 
               <div className="h-32 w-screen relative bg-gray-700">
                 <div id="transition" className="absolute transition1 h-full w-full" style={{
                   animationDelay: `-${offsetY * 0.003
@@ -462,7 +447,7 @@ function App() {
                 }}>
                   <img src={kazumi} style={{ transform: `translateY(${((offsetY - 2 * screenHeight) * 0.2)}px)` }} className="w-full" />
                 </div>
-              </div>
+              </div> */}
 
 
               <section id="duck" className=" z-30 stacking-slide h-screen text-white font-bold text-5xl flexTextCenter pt-20 bg-gray-700">
@@ -582,8 +567,6 @@ function App() {
               </div>
 
             </div>
-
-
 
           </div>
       }
