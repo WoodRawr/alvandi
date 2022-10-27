@@ -384,51 +384,40 @@ function App() {
 
                 <div id="leftSection" className="h-full w-1/2 relative z-10">
 
-                  <div className="absolute h-full" style={{ zIndex: '10' }}>
+                  {/* <div className="absolute h-full" style={{ zIndex: '10' }}>
                     <img src={kazumi} className=" h-1/4" style={{ transform: `translateY(${-((offsetY - 2 * screenHeight) * 0.3)}px)` }}></img>
-                  </div>
+                  </div> */}
 
-                  <div className="absolute h-full p-10 " style={{ zIndex: '20' }}>
+                  <div className="relative h-full w-full" style={{ zIndex: '20' }}>
 
-                    <div id="top" className="h-1/2  flex flex-row">
-
-                      <div id="left" className="w-2/3">
-                        <div className="transform skew-y-12 text-6xl">
+                    <div id="top" className="h-1/2  flex flex-col p-20 px-36">
+                        <div className="transform text-6xl p-10 flex flex-row">
                           <h1 className="glitch" style={{
                             "-webkit-text-stroke": "4px white",
                             "-webkit-text-fill-color": "white"
                           }} data-text="CATBOXED">CATBOXED</h1>
+                          <h1 style={{
+                            "-webkit-text-stroke": "4px white",
+                            "-webkit-text-fill-color": "white"
+                          }} className="text-lg">
+                            Created Using UNITY
+                          </h1>
                         </div>
-
                         <div id="socialbuttons p-2" className=" flex flex-row ">
                           <button class="noselect socialButton"><span className="text text-sm">DEMO<br />VIDEO</span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z" /></svg></span></button>
                           <div className=" w-2" />
                           <button class="noselect socialButton"><span className="text text-sm">GOOGLE<br />PLAY</span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z" /></svg></span></button>
-
                         </div>
-
                         <p className="text-sm">
                           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                         </p>
-                      </div>
-
-                      <div className="w-1 bg-white">
-                      </div>
-
-                      <div id="right" className=" w-1/3 p-5">
-                        CREATED USING UNITY
-                      </div>
-
                     </div>
 
-                    <div id="bottom" className="h-1/2 p-5 ">
-
-                      <YoutubeEmbed embedId="-vw5g42UhZs" />
-
+                    <div id="bottom" className="h-1/2 p-10">
+                      <YoutubeEmbed embedId="-vw5g42UhZs" className="h-full w-full"/>
                     </div>
 
                   </div>
-
                 </div>
 
                 <div id="rightSection" className="h-full w-1/2 flex flex-row p-10 relative z-20">
