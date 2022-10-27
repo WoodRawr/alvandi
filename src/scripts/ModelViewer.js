@@ -1,7 +1,14 @@
+/*
+Three JS Libraries
+*/
 import React, { Component } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+
+/*
+Media Imports
+*/
 import kazumi from './WRLogo.png'
 import WRWRBG from 'C:/Users/gerad/Desktop/pw/alvandi/src/img/WRWRBG.png'
 import gltfPath from 'C:/Users/gerad/Desktop/pw/alvandi/src/model/robotbossthreejs.glb'
@@ -10,7 +17,9 @@ export default class ModelViewer extends React.Component {
 
   componentDidMount() {
 
-    // PREREQUISITES
+    /* 
+    PREREQUISITES 
+    */
     var scene = new THREE.Scene();
     var camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
     var renderer = new THREE.WebGLRenderer({ alpha: true });
@@ -21,25 +30,28 @@ export default class ModelViewer extends React.Component {
     const loader = new THREE.TextureLoader();
     const _3dloader = new GLTFLoader();
 
-    // LIGHTING
-
-    // 3D MODEL IMPORTING
+    /*
+     3D MODEL IMPORTING
+     */
     var _3dmodel;
     var _3dhead;
     var testing = _3dloader.load(gltfPath,  (gltf) => {
       _3dmodel = gltf.scene;
-      // _3dhead = gltf.scene.getObjectByName("RobotHead");
       _3dhead = _3dmodel.getObjectByName("RobotHead");
       scene.add(_3dmodel);
       scene.add(_3dhead);
-
-      _3dmodel.position.x = -2.5;
-      _3dhead.position.x = -2.5;
+      /*
+      Uncomment down below to shift the robot to the left
+      */
+      //_3dmodel.position.x = -2.5;
+      //_3dhead.position.x = -2.5;
     }, undefined, (error)=>{
       console.error(error);
     });
 
-    // PLANE GENERATION
+    /*
+     PLANE GENERATION
+     */
     const texture = new THREE.TextureLoader().load('../img/kazumi.jpg');
     const planematerial = new THREE.MeshBasicMaterial({
       //map: loader.load('https://threejsfundamentals.org/threejs/resources/images/wall.jpg'),
@@ -54,30 +66,36 @@ export default class ModelViewer extends React.Component {
     scene.add(plane);
     plane.position.z = -3;
 
-    // CUBE GENERATION
+    /*
+     CUBE GENERATION
+     */
     var geometry = new THREE.BoxGeometry(1, 1, 1);
     var material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
     var cube = new THREE.Mesh(geometry, material);
     //scene.add(cube);
     camera.position.z = 12;
 
-    // ORBIT CONTROLS
-    // var controls = new OrbitControls(camera, renderer.domElement);
-    // controls.enablePan = false;
-    // controls.enableZoom = false;
+    /*
+     ORBIT CONTROLS
+     */
+    /*
+    var controls = new OrbitControls(camera, renderer.domElement);
+     controls.enablePan = false;
+     controls.enableZoom = false;
 
-    // cube.renderOrder = 3;
+     cube.renderOrder = 3;
+     */
 
-    // MOUSELOCATION
+    /*
+     MOUSELOCATION
+     */
     var xp = 0, yp = 0;
     var mouseX = 0, mouseY = 0;
     var diff = 0;
+
     document.addEventListener('mousemove' , (e) => {
       mouseX = e.clientX * 100 / window.innerWidth;
       mouseY = e.clientY * 100 / window.innerHeight;
-      // balls[0].style.left = this.mouseX;
-      // balls[0].style.top = this.mouseY;
-      // balls[0].style.transform = "translate(-"+ this.mouseX +",-"+ this.mouseY +")";
     });
 
     setInterval(function(){
@@ -85,7 +103,9 @@ export default class ModelViewer extends React.Component {
       yp += ((mouseY - yp)/10);
     }, 20);
 
-    // ANIMATION
+    /*
+     ANIMATION
+     */
     var animate = function () {
       requestAnimationFrame(animate);
 
@@ -95,23 +115,21 @@ export default class ModelViewer extends React.Component {
         _3dmodel.rotation.y = xp*0.06 + diff;
         _3dmodel.rotation.x = yp*0.001;
 
-        // console.log(_3dhead);
-
         _3dhead.rotation.y = xp*0.06 + diff;
         _3dhead.rotation.x = yp*0.01;
       }
 
       renderer.render(scene, camera);
     };
-
     animate();
   }
+
   render() {
     return (
       <div>
         <div ref={ref => (this.mount = ref)} />
       </div>
-
     )
   }
+
 }

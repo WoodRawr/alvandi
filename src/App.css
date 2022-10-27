@@ -137,7 +137,7 @@ section {
 }
 
 /* Home Navigation */
-.homenav {
+/* .homenav {
   opacity: 50%;
   transition: 0.3s;
   border-style: none none none solid;
@@ -148,12 +148,12 @@ section {
 .homenav:hover {
   opacity: 100%;
   border-width:0.5rem;
-}
+} */
 
 .homenavBottom {
   opacity: 50%;
   transition: 0.3s;
-  border-style: none none none solid;
+  border-style: none none solid none;
   border-width:0px;
   padding: 5px;
 }
