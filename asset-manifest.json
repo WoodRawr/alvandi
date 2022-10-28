@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/alvandi/static/css/main.f843f3e9.chunk.css",
-    "main.js": "/alvandi/static/js/main.09177c29.chunk.js",
-    "main.js.map": "/alvandi/static/js/main.09177c29.chunk.js.map",
+    "main.js": "/alvandi/static/js/main.b0730963.chunk.js",
+    "main.js.map": "/alvandi/static/js/main.b0730963.chunk.js.map",
     "runtime-main.js": "/alvandi/static/js/runtime-main.9712863e.js",
     "runtime-main.js.map": "/alvandi/static/js/runtime-main.9712863e.js.map",
     "static/js/2.3da7dd74.chunk.js": "/alvandi/static/js/2.3da7dd74.chunk.js",
@@ -23,6 +23,6 @@
     "static/js/runtime-main.9712863e.js",
     "static/js/2.3da7dd74.chunk.js",
     "static/css/main.f843f3e9.chunk.css",
-    "static/js/main.09177c29.chunk.js"
+    "static/js/main.b0730963.chunk.js"
   ]
 }
