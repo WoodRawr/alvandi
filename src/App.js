@@ -174,7 +174,7 @@ function App() {
               </div>
 
               {/* MID SECTION */}
-              <div className="navigationBar flex flex-col h-full transform">
+              <div className="navigationBar flex flex-col h-full transform text-white">
 
                 <div className="flex flex-col h-full">
                   <a href="#home" class="dot active"></a>
