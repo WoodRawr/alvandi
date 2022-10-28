@@ -224,7 +224,7 @@ function App() {
                   <div className="w-full">
                     {/* SPACER */}
                   </div>
-                  <div className="flex flex-row">
+                  <div className="flex flex-row text-white">
                     <a class="homenavBottom text-lg" href="#home"> HOME </a>
                     <a class="homenavBottom text-lg" href="#about"> ABOUT </a>
                     <a class="homenavBottom text-lg" href="#cat"> CATBOXED </a>
