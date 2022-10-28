@@ -45,7 +45,8 @@ function App() {
 
   useEffect(() => {
 
-    //Loading Screen
+    /*Loading Screen
+    */
     //Set the next line to true to see the loading screen
     setLoading(false);
     setTimeout(() => {
@@ -59,17 +60,22 @@ function App() {
       const stickyHeader = document.getElementById("stickyHeader");
       const transition = document.getElementById("transition");
 
-      //Highlight Navigation Buttons
+      /* From top variable to show how far down the page is
+      */
       let fromTop = window.scrollY;
 
-      // console.log(fromTop);
-
+      /*
+      Sticky header blur
+      */
       if (fromTop > 0) {
         if (!stickyHeader.classList.contains("active")) stickyHeader.classList.add("active");
       } else {
         stickyHeader.classList.remove("active");
       }
 
+      /*
+      Navigation scroll bar on the side
+      */
       mainNavLinks.forEach(link => {
         let section = document.querySelector(link.hash);
         if ((section.offsetTop <= fromTop + (screenHeight * 0.5))) {
@@ -79,7 +85,8 @@ function App() {
         }
       });
 
-      // Autograph Animation Trigger
+      /* Autograph Animation Trigger
+      */
       const signaturePaths = document.querySelectorAll(".autographPath");
       const signature = document.querySelectorAll(".signature");
       let signatureOffsetTop = signature[0].getBoundingClientRect().top;
@@ -186,7 +193,7 @@ function App() {
 
                   <a href="#end" class="dot"></a>
 
-                  <a href="#footer" class="dot"></a>
+                  {/* <a href="#footer" class="dot"></a> */}
                 </div>
 
               </div>
@@ -332,19 +339,20 @@ function App() {
 
               </section>
 
-              <section id="about" className=" z-10 stacking-slide h-screen bg-gray-800 text-white font-bold text-5xl relative flex flex-row"
+              <section id="about" className=" z-10 h-screen bg-gray-800 text-white font-bold text-5xl relative flex flex-row"
                 style={{
                   backgroundImage: 'url(' + DOTS + ')',
                   backgroundSize: '10%'
                 }}>
-                <div className="w-full">
+                <div className="w-full p-36">
                   <Zoom>
-                    me.About();
+                    My name is Dylan Alvandi!
+                    Student, TUM, Computer Science.
                   </Zoom>
                 </div>
-                <div className="w-full">
+                <div className="w-full p-36">
                   <Zoom>
-                    me.About();
+                    I love making games! This website is under construction :D
                   </Zoom>
                 </div>
                 <img src={kazumi} className=" z-50 h-2/3 bottom-0 absolute left-1/2 transform -translate-x-1/2 myPic"></img>
@@ -361,8 +369,8 @@ function App() {
               </div>
 
               <div id="slidingtext_projects" className="absolute z-50 -translate-y-1/2 transform text-9xl overflow-x-scroll max-h-32 whitespace-nowrap bg-red-500" style={{
-                "-webkit-text-stroke": "1px white",
-                "-webkit-text-fill-color": "white",
+                "-webkit-text-stroke": "3px white",
+                "-webkit-text-fill-color": "transparent",
                 "textOverflow": "clip",
                 transform: `translate(${((offsetY - 2 * screenHeight) * 0.3)}px , -50%) `,
                 overflow: `hidden`
@@ -380,7 +388,7 @@ function App() {
                 PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS  PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS
               </div>
 
-              <section id="cat" className=" z-20 stacking-slide h-screen bg-gray-700 text-white font-bold text-5xl flexTextCenter pt-20">
+              <section id="cat" className=" z-20 h-screen bg-gray-700 text-white font-bold text-5xl flexTextCenter pt-20 stacking-slide">
 
                 <div id="leftSection" className="h-full w-1/2 relative z-10">
 
@@ -391,30 +399,30 @@ function App() {
                   <div className="relative h-full w-full" style={{ zIndex: '20' }}>
 
                     <div id="top" className="h-1/2  flex flex-col p-20 px-36">
-                        <div className="transform text-6xl p-10 flex flex-row">
-                          <h1 className="glitch" style={{
-                            "-webkit-text-stroke": "4px white",
-                            "-webkit-text-fill-color": "white"
-                          }} data-text="CATBOXED">CATBOXED</h1>
-                          <h1 style={{
-                            "-webkit-text-stroke": "4px white",
-                            "-webkit-text-fill-color": "white"
-                          }} className="text-lg">
-                            Created Using UNITY
-                          </h1>
-                        </div>
-                        <div id="socialbuttons p-2" className=" flex flex-row ">
-                          <button class="noselect socialButton"><span className="text text-sm">DEMO<br />VIDEO</span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z" /></svg></span></button>
-                          <div className=" w-2" />
-                          <button class="noselect socialButton"><span className="text text-sm">GOOGLE<br />PLAY</span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z" /></svg></span></button>
-                        </div>
-                        <p className="text-sm">
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                        </p>
+                      <div className="transform text-6xl p-10 flex flex-row">
+                        <h1 className="glitch" style={{
+                          "-webkit-text-stroke": "4px white",
+                          "-webkit-text-fill-color": "white"
+                        }} data-text="CATBOXED">CATBOXED</h1>
+                        <h1 style={{
+                          "-webkit-text-stroke": "4px white",
+                          "-webkit-text-fill-color": "white"
+                        }} className="text-lg">
+                          UNITY
+                        </h1>
+                      </div>
+                      <div id="socialbuttons p-2" className=" flex flex-row ">
+                        <button class="noselect socialButton"><span className="text text-sm">DEMO<br />VIDEO</span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z" /></svg></span></button>
+                        <div className=" w-2" />
+                        <button class="noselect socialButton"><span className="text text-sm">GOOGLE<br />PLAY</span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z" /></svg></span></button>
+                      </div>
+                      <p className="text-sm">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                      </p>
                     </div>
 
                     <div id="bottom" className="h-1/2 p-10">
-                      <YoutubeEmbed embedId="-vw5g42UhZs" className="h-full w-full"/>
+                      <YoutubeEmbed embedId="-vw5g42UhZs" className="h-full w-full" />
                     </div>
 
                   </div>
@@ -422,13 +430,13 @@ function App() {
 
                 <div id="rightSection" className="h-full w-1/2 flex flex-row p-10 relative z-20">
 
-                  <GallerySample />
+                  {/* <GallerySample /> */}
 
                 </div>
 
               </section>
 
-              <div className="h-32 w-screen relative bg-gray-700">
+              {/* <div className="h-32 w-screen relative bg-gray-700">
                 <div id="transition" className="absolute transition1 h-full w-full" style={{
                   animationDelay: `-${offsetY * 0.003
                     }s`,
@@ -436,71 +444,154 @@ function App() {
                 }}>
                   <img src={kazumi} style={{ transform: `translateY(${((offsetY - 2 * screenHeight) * 0.2)}px)` }} className="w-full" />
                 </div>
-              </div>
+              </div> */}
 
 
-              <section id="duck" className=" z-30 stacking-slide h-screen text-white font-bold text-5xl flexTextCenter pt-20 bg-gray-700">
+              <section id="duck" className=" z-20 h-screen bg-gray-700 text-white font-bold text-5xl flexTextCenter pt-20 stacking-slide">
 
                 <div id="leftSection" className="h-full w-1/2 relative z-10">
 
-                  <div className="absolute h-full" style={{ zIndex: '10' }}>
-                    <img src={kazumi} className=" h-1/4" style={{ transform: `translateY(${-((offsetY - 2 * screenHeight) * 0.3)}px)` }}></img>
-                  </div>
+                  {/* <div className="absolute h-full" style={{ zIndex: '10' }}>
+    <img src={kazumi} className=" h-1/4" style={{ transform: `translateY(${-((offsetY - 2 * screenHeight) * 0.3)}px)` }}></img>
+  </div> */}
 
-                  <div className="absolute h-full p-10 " style={{ zIndex: '20' }}>
+                  <div className="relative h-full w-full" style={{ zIndex: '20' }}>
 
-                    <div id="top" className="h-1/2  flex flex-row">
-
-                      <div id="left" className="w-2/3">
-                        <div className="transform skew-y-12 text-6xl">
-                          <h1 className="glitch" style={{
-                            "-webkit-text-stroke": "4px white",
-                            "-webkit-text-fill-color": "white"
-                          }} data-text="DUCK RUSH">DUCK RUSH</h1>
-                        </div>
-
-                        <div id="socialbuttons p-2" className=" flex flex-row ">
-                          <button class="noselect socialButton"><span className="text text-sm">DEMO<br />VIDEO</span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z" /></svg></span></button>
-                          <div className=" w-2" />
-                          <button class="noselect socialButton"><span className="text text-sm">GOOGLE<br />PLAY</span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z" /></svg></span></button>
-
-                        </div>
-
-                        <p className="text-sm">
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                        </p>
+                    <div id="top" className="h-1/2  flex flex-col p-20 px-36">
+                      <div className="transform text-6xl p-10 flex flex-row">
+                        <h1 className="glitch" style={{
+                          "-webkit-text-stroke": "4px white",
+                          "-webkit-text-fill-color": "white"
+                        }} data-text="CATBOXED">CATBOXED</h1>
+                        <h1 style={{
+                          "-webkit-text-stroke": "4px white",
+                          "-webkit-text-fill-color": "white"
+                        }} className="text-lg">
+                          Unity
+                        </h1>
                       </div>
-
-                      <div className="w-1 bg-white">
+                      <div id="socialbuttons p-2" className=" flex flex-row ">
+                        <button class="noselect socialButton"><span className="text text-sm">DEMO<br />VIDEO</span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z" /></svg></span></button>
+                        <div className=" w-2" />
+                        <button class="noselect socialButton"><span className="text text-sm">GOOGLE<br />PLAY</span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z" /></svg></span></button>
                       </div>
-
-                      <div id="right" className=" w-1/3 p-5">
-                        CREATED USING UNITY
-                      </div>
-
+                      <p className="text-sm">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                      </p>
                     </div>
 
-                    <div id="bottom" className="h-1/2 p-5 ">
-
-                      <YoutubeEmbed embedId="-vw5g42UhZs" />
-
+                    <div id="bottom" className="h-1/2 p-10">
+                      <YoutubeEmbed embedId="-vw5g42UhZs" className="h-full w-full" />
                     </div>
 
                   </div>
-
                 </div>
 
                 <div id="rightSection" className="h-full w-1/2 flex flex-row p-10 relative z-20">
 
-                  <GallerySample />
+                  {/* <GallerySample /> */}
 
                 </div>
 
               </section>
 
+              <section id="cat" className=" z-20 h-screen bg-gray-700 text-white font-bold text-5xl flexTextCenter pt-20 stacking-slide">
 
+                <div id="leftSection" className="h-full w-1/2 relative z-10">
 
-              <section id="end" className=" z-40 stacking-slide h-screen bg-gray-900 text-white font-bold text-5xl flexTextCenter sticky" >
+                  {/* <div className="absolute h-full" style={{ zIndex: '10' }}>
+    <img src={kazumi} className=" h-1/4" style={{ transform: `translateY(${-((offsetY - 2 * screenHeight) * 0.3)}px)` }}></img>
+  </div> */}
+
+                  <div className="relative h-full w-full" style={{ zIndex: '20' }}>
+
+                    <div id="top" className="h-1/2  flex flex-col p-20 px-36">
+                      <div className="transform text-6xl p-10 flex flex-row">
+                        <h1 className="glitch" style={{
+                          "-webkit-text-stroke": "4px white",
+                          "-webkit-text-fill-color": "white"
+                        }} data-text="CATBOXED">CATBOXED</h1>
+                        <h1 style={{
+                          "-webkit-text-stroke": "4px white",
+                          "-webkit-text-fill-color": "white"
+                        }} className="text-lg">
+                          Created Using UNITY
+                        </h1>
+                      </div>
+                      <div id="socialbuttons p-2" className=" flex flex-row ">
+                        <button class="noselect socialButton"><span className="text text-sm">DEMO<br />VIDEO</span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z" /></svg></span></button>
+                        <div className=" w-2" />
+                        <button class="noselect socialButton"><span className="text text-sm">GOOGLE<br />PLAY</span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z" /></svg></span></button>
+                      </div>
+                      <p className="text-sm">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                      </p>
+                    </div>
+
+                    <div id="bottom" className="h-1/2 p-10">
+                      <YoutubeEmbed embedId="-vw5g42UhZs" className="h-full w-full" />
+                    </div>
+
+                  </div>
+                </div>
+
+                <div id="rightSection" className="h-full w-1/2 flex flex-row p-10 relative z-20">
+
+                  {/* <GallerySample /> */}
+
+                </div>
+
+              </section>
+
+              <section id="cat" className=" z-20 h-screen bg-gray-700 text-white font-bold text-5xl flexTextCenter pt-20 stacking-slide">
+
+                <div id="leftSection" className="h-full w-1/2 relative z-10">
+
+                  {/* <div className="absolute h-full" style={{ zIndex: '10' }}>
+    <img src={kazumi} className=" h-1/4" style={{ transform: `translateY(${-((offsetY - 2 * screenHeight) * 0.3)}px)` }}></img>
+  </div> */}
+
+                  <div className="relative h-full w-full" style={{ zIndex: '20' }}>
+
+                    <div id="top" className="h-1/2  flex flex-col p-20 px-36">
+                      <div className="transform text-6xl p-10 flex flex-row">
+                        <h1 className="glitch" style={{
+                          "-webkit-text-stroke": "4px white",
+                          "-webkit-text-fill-color": "white"
+                        }} data-text="CATBOXED">CATBOXED</h1>
+                        <h1 style={{
+                          "-webkit-text-stroke": "4px white",
+                          "-webkit-text-fill-color": "white"
+                        }} className="text-lg">
+                          Created Using UNITY
+                        </h1>
+                      </div>
+                      <div id="socialbuttons p-2" className=" flex flex-row ">
+                        <button class="noselect socialButton"><span className="text text-sm">DEMO<br />VIDEO</span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z" /></svg></span></button>
+                        <div className=" w-2" />
+                        <button class="noselect socialButton"><span className="text text-sm">GOOGLE<br />PLAY</span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z" /></svg></span></button>
+                      </div>
+                      <p className="text-sm">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                      </p>
+                    </div>
+
+                    <div id="bottom" className="h-1/2 p-10">
+                      <YoutubeEmbed embedId="-vw5g42UhZs" className="h-full w-full" />
+                    </div>
+
+                  </div>
+                </div>
+
+                <div id="rightSection" className="h-full w-1/2 flex flex-row p-10 relative z-20">
+
+                  {/* <GallerySample /> */}
+
+                </div>
+
+              </section>
+
+              <section id="end" className=" z-40 h-screen bg-gray-900 text-white font-bold text-5xl flexTextCenter stacking-slide" >
 
                 <div>
                   END
@@ -514,7 +605,7 @@ function App() {
 
               </section>
 
-              <div id="footer" className=" z-50 stacking-slide footer align-middle justify-center flex-row flex text-white sticky">
+              <div id="footer" className=" z-50 footer align-middle justify-center flex-row flex text-black stacking-slide">
                 <div className="w-1/5 p-20">
 
                 </div >
