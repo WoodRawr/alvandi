@@ -10,8 +10,10 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 Media Imports
 */
 import kazumi from './WRLogo.png'
-import WRWRBG from 'C:/Users/gerad/Desktop/pw/alvandi/src/img/WRWRBG.png'
-import gltfPath from 'C:/Users/gerad/Desktop/pw/alvandi/src/model/robotbossthreejs.glb'
+// import WRWRBG from 'C:/Users/gerad/Desktop/pw/alvandi/src/img/WRWRBG.png'
+import WRWRBG from '../img/WRWRBG.png'
+// import gltfPath from 'C:/Users/gerad/Desktop/pw/alvandi/src/model/robotbossthreejs.glb'
+import gltfPath from '../model/robotbossthreejs.glb'
 
 export default class ModelViewer extends React.Component {
 

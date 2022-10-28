@@ -10,7 +10,7 @@ import React, { Component } from 'react';
 /*
 Media Imports
  */
-import kazumi from './img/Kazumi.jpg'
+import kazumi from './img/aboutMeImg.png'
 import ClimbingBoxLoader from "react-spinners/ClimbingBoxLoader";
 import WRLOGO from './img/WRLogo.png'
 import DOTS from './img/dots.jpg'
@@ -594,18 +594,18 @@ function App() {
               <section id="end" className=" z-40 h-screen bg-gray-900 text-white font-bold text-5xl flexTextCenter stacking-slide" >
 
                 <div>
-                  END
+                  UNDER
                 </div>
 
                 <Signature />
 
                 <div>
-                  END
+                  CONSTRUCTION
                 </div>
 
               </section>
 
-              <div id="footer" className=" z-50 footer align-middle justify-center flex-row flex text-black stacking-slide">
+              <div id="footer" className=" z-50 footer align-middle justify-center flex-row flex stacking-slide text-gray-400 text-base font-semibold">
                 <div className="w-1/5 p-20">
 
                 </div >
