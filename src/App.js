@@ -225,13 +225,13 @@ function App() {
                     {/* SPACER */}
                   </div>
                   <div className="flex flex-row text-white">
-                    <a class="homenavBottom text-lg" href="#home"> HOME </a>
-                    <a class="homenavBottom text-lg" href="#about"> ABOUT </a>
-                    <a class="homenavBottom text-lg" href="#cat"> CATBOXED </a>
-                    <a class="homenavBottom text-lg" href="#duck"> DUCKRUSH </a>
-                    <a class="homenavBottom text-lg" href="#3d"> 3D </a>
-                    <a class="homenavBottom text-lg" href="#end"> END </a>
-                    <a class="homenavBottom text-lg" href="#footer"> FOOTER </a>
+                    <a class="homenavBottom text-lg text-white" href="#home"> HOME </a>
+                    <a class="homenavBottom text-lg text-white" href="#about"> ABOUT </a>
+                    <a class="homenavBottom text-lg text-white" href="#cat"> CATBOXED </a>
+                    <a class="homenavBottom text-lg text-white" href="#duck"> DUCKRUSH </a>
+                    <a class="homenavBottom text-lg text-white" href="#3d"> 3D </a>
+                    <a class="homenavBottom text-lg text-white" href="#end"> END </a>
+                    <a class="homenavBottom text-lg text-white" href="#footer"> FOOTER </a>
                   </div>
                 </div>
 
