@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/alvandi/static/css/main.5cdd7ad6.chunk.css",
-    "main.js": "/alvandi/static/js/main.8ff88c19.chunk.js",
-    "main.js.map": "/alvandi/static/js/main.8ff88c19.chunk.js.map",
-    "runtime-main.js": "/alvandi/static/js/runtime-main.1cfea33e.js",
-    "runtime-main.js.map": "/alvandi/static/js/runtime-main.1cfea33e.js.map",
-    "static/js/2.898a3e58.chunk.js": "/alvandi/static/js/2.898a3e58.chunk.js",
-    "static/js/2.898a3e58.chunk.js.map": "/alvandi/static/js/2.898a3e58.chunk.js.map",
-    "static/js/3.d0cdabfc.chunk.js": "/alvandi/static/js/3.d0cdabfc.chunk.js",
-    "static/js/3.d0cdabfc.chunk.js.map": "/alvandi/static/js/3.d0cdabfc.chunk.js.map",
+    "main.css": "/alvandi/static/css/main.f843f3e9.chunk.css",
+    "main.js": "/alvandi/static/js/main.540f1db3.chunk.js",
+    "main.js.map": "/alvandi/static/js/main.540f1db3.chunk.js.map",
+    "runtime-main.js": "/alvandi/static/js/runtime-main.9712863e.js",
+    "runtime-main.js.map": "/alvandi/static/js/runtime-main.9712863e.js.map",
+    "static/js/2.3da7dd74.chunk.js": "/alvandi/static/js/2.3da7dd74.chunk.js",
+    "static/js/2.3da7dd74.chunk.js.map": "/alvandi/static/js/2.3da7dd74.chunk.js.map",
+    "static/js/3.93cc61a9.chunk.js": "/alvandi/static/js/3.93cc61a9.chunk.js",
+    "static/js/3.93cc61a9.chunk.js.map": "/alvandi/static/js/3.93cc61a9.chunk.js.map",
     "index.html": "/alvandi/index.html",
-    "static/css/main.5cdd7ad6.chunk.css.map": "/alvandi/static/css/main.5cdd7ad6.chunk.css.map",
-    "static/js/2.898a3e58.chunk.js.LICENSE.txt": "/alvandi/static/js/2.898a3e58.chunk.js.LICENSE.txt",
-    "static/media/Kazumi.a6f3a1a6.jpg": "/alvandi/static/media/Kazumi.a6f3a1a6.jpg",
+    "static/css/main.f843f3e9.chunk.css.map": "/alvandi/static/css/main.f843f3e9.chunk.css.map",
+    "static/js/2.3da7dd74.chunk.js.LICENSE.txt": "/alvandi/static/js/2.3da7dd74.chunk.js.LICENSE.txt",
     "static/media/WRLogo.06af48d2.png": "/alvandi/static/media/WRLogo.06af48d2.png",
     "static/media/WRWRBG.928a960e.png": "/alvandi/static/media/WRWRBG.928a960e.png",
+    "static/media/aboutMeImg.c7ee7852.png": "/alvandi/static/media/aboutMeImg.c7ee7852.png",
     "static/media/dots.7c17a299.jpg": "/alvandi/static/media/dots.7c17a299.jpg",
     "static/media/logo.6ce24c58.svg": "/alvandi/static/media/logo.6ce24c58.svg",
     "static/media/robotbossthreejs.bbc8404f.glb": "/alvandi/static/media/robotbossthreejs.bbc8404f.glb"
   },
   "entrypoints": [
-    "static/js/runtime-main.1cfea33e.js",
-    "static/js/2.898a3e58.chunk.js",
-    "static/css/main.5cdd7ad6.chunk.css",
-    "static/js/main.8ff88c19.chunk.js"
+    "static/js/runtime-main.9712863e.js",
+    "static/js/2.3da7dd74.chunk.js",
+    "static/css/main.f843f3e9.chunk.css",
+    "static/js/main.540f1db3.chunk.js"
   ]
 }
