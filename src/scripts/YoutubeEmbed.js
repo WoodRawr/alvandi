@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const YoutubeEmbed = ({ embedId }) => (
-  <div className="video-responsive" style={{"border-radius":"20px",overflow: "hidden","width": "100%","display": "flex","height": "100%"}}>
+  <div className="video-responsive" style={{"border-radius":"0px",overflow: "hidden","width": "100%","display": "flex","height": "100%"}}>
     <iframe
       width="100%"
       height="100%"

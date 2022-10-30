@@ -29,6 +29,7 @@ import GallerySample from './scripts/GallerySample';
 Animation Imports
 */
 import Zoom from 'react-reveal/Bounce';
+import AccordionGallery from './scripts/AccordionGallery';
 
 function App() {
 
@@ -227,11 +228,9 @@ function App() {
                   <div className="flex flex-row text-white">
                     <a class="homenavBottom text-lg text-white" href="#home"> HOME </a>
                     <a class="homenavBottom text-lg text-white" href="#about"> ABOUT </a>
-                    <a class="homenavBottom text-lg text-white" href="#cat"> CATBOXED </a>
-                    <a class="homenavBottom text-lg text-white" href="#duck"> DUCKRUSH </a>
-                    <a class="homenavBottom text-lg text-white" href="#3d"> 3D </a>
-                    <a class="homenavBottom text-lg text-white" href="#end"> END </a>
-                    <a class="homenavBottom text-lg text-white" href="#footer"> FOOTER </a>
+                    <a class="homenavBottom text-lg text-white" href="#cat"> PROJECTS </a>
+                    <a class="homenavBottom text-lg text-white" href="#end"> OTHER </a>
+                    <a class="homenavBottom text-lg text-white" href="#footer"> END </a>
                   </div>
                 </div>
 
@@ -339,20 +338,36 @@ function App() {
 
               </section>
 
-              <section id="about" className=" z-10 h-screen bg-gray-800 text-white font-bold text-5xl relative flex flex-row"
+              <section id="about" className=" z-10 h-screen bg-gray-800 text-white font-bold text-2xl relative flex flex-row"
                 style={{
                   backgroundImage: 'url(' + DOTS + ')',
                   backgroundSize: '10%'
                 }}>
                 <div className="w-full p-36">
                   <Zoom>
-                    My name is Dylan Alvandi!
-                    Student, TUM, Computer Science.
+                  Unity C#
                   </Zoom>
+                  <Zoom>
+Javascript (React.js, which this website was built with!)</Zoom>
+<Zoom>
+C</Zoom>
+<Zoom>
+Swift + SwiftUI</Zoom>
+<Zoom>Java (Spring, Maven, Cucumber)</Zoom>
+<Zoom>
+Blender
+                  </Zoom>
+                  <Zoom>
+And of course, Python 😊
+                  </Zoom>
+
                 </div>
                 <div className="w-full p-36">
                   <Zoom>
-                    I love making games! This website is under construction :D
+
+Dylan Alvandi, TUM Computer Science.
+I love self development, team management, games development, design, and programming!
+I’m currently a working student software engineer at ReliaTec GmbH.
                   </Zoom>
                 </div>
                 <img src={kazumi} className=" z-50 h-2/3 bottom-0 absolute left-1/2 transform -translate-x-1/2 myPic"></img>
@@ -403,25 +418,19 @@ function App() {
                         <h1 className="glitch" style={{
                           "-webkit-text-stroke": "4px white",
                           "-webkit-text-fill-color": "white"
-                        }} data-text="CATBOXED">CATBOXED</h1>
-                        <h1 style={{
-                          "-webkit-text-stroke": "4px white",
-                          "-webkit-text-fill-color": "white"
-                        }} className="text-lg">
-                          UNITY
-                        </h1>
+                        }} data-text="CATBOXED">CATBOXED!</h1>
                       </div>
-                      <div id="socialbuttons p-2" className=" flex flex-row ">
+                      <div id="socialbuttons" className=" flex flex-row px-10">
                         <button class="noselect socialButton"><span className="text text-sm">DEMO<br />VIDEO</span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z" /></svg></span></button>
                         <div className=" w-2" />
                         <button class="noselect socialButton"><span className="text text-sm">GOOGLE<br />PLAY</span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z" /></svg></span></button>
                       </div>
-                      <p className="text-sm">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                      <p className="text-base p-10">
+                      A small game created using Unity(C#), all 3D models were created by myself, and was eventually published to the Play Store in 2019. Tossing cats into boxes, including a trajectory system.
                       </p>
                     </div>
 
-                    <div id="bottom" className="h-1/2 p-10">
+                    <div id="bottom" className="h-1/2 p-0">
                       <YoutubeEmbed embedId="-vw5g42UhZs" className="h-full w-full" />
                     </div>
 
@@ -431,6 +440,7 @@ function App() {
                 <div id="rightSection" className="h-full w-1/2 flex flex-row p-10 relative z-20">
 
                   {/* <GallerySample /> */}
+                  <AccordionGallery/>
 
                 </div>
 
@@ -463,12 +473,6 @@ function App() {
                           "-webkit-text-stroke": "4px white",
                           "-webkit-text-fill-color": "white"
                         }} data-text="CATBOXED">CATBOXED</h1>
-                        <h1 style={{
-                          "-webkit-text-stroke": "4px white",
-                          "-webkit-text-fill-color": "white"
-                        }} className="text-lg">
-                          Unity
-                        </h1>
                       </div>
                       <div id="socialbuttons p-2" className=" flex flex-row ">
                         <button class="noselect socialButton"><span className="text text-sm">DEMO<br />VIDEO</span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z" /></svg></span></button>
@@ -594,13 +598,13 @@ function App() {
               <section id="end" className=" z-40 h-screen bg-gray-900 text-white font-bold text-5xl flexTextCenter stacking-slide" >
 
                 <div>
-                  UNDER
+                  Until
                 </div>
 
                 <Signature />
 
                 <div>
-                  CONSTRUCTION
+                  Next time!
                 </div>
 
               </section>
